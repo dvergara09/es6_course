@@ -70,3 +70,58 @@ console.log(global);
 
 const a = "b";
 a = "c";
+
+/**parametros en objetos */
+let name = "Daniel";
+let age = 23;
+//antes
+obj = { name: name, age: age };
+//ahora
+obj2 = { name, age };
+
+/** Arrow functions*/
+/**problema particular
+ * sitaxis mas reducida
+ * this no vinculable
+ */
+const names = [
+  { name: "Daniel", age: 23 },
+  { name: "Mile", age: 20 },
+];
+//antes
+/**aqui pasamos una funcion anonima */
+let listOfNames = names.map(function (item) {
+  console.log(item.name);
+});
+/**aqui usamos arrow function */
+let listOfNames2 = names.map((item) => console.log(item.name));
+
+const listOfNames3 = (name, age, country) => {
+  //code
+};
+
+const listOfNames4 = (name) => {
+  //code
+};
+
+const square = (num) => num * num;
+
+/**PROMESAS */
+/**JS No es sincronicos
+ * sino que  va manejando elemento por elemento
+ * estas solucionan el callback hell
+ * son utiles para llamar a apis
+ */
+const helloPromise = () => {
+  return new Promise((result, reject) => {
+    if (false) {
+      result("Hey");
+    } else {
+      reject("Ups");
+    }
+  });
+};
+
+helloPromise()
+  .then((response) => console.log(response))
+  .catch((error) => console.log(error));
