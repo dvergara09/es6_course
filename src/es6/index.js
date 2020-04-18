@@ -156,3 +156,7 @@ const generatorHello = helloworld();
 console.log(generatorHello.next().value);
 console.log(generatorHello.next().value);
 console.log(generatorHello.next().value);
+
+let a = "b";
+let a = "c";
+console.log(a);
